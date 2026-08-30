@@ -1,0 +1,1021 @@
+[New LWP 499393]
+[New LWP 499251]
+[New LWP 488964]
+[New LWP 488963]
+[New LWP 488962]
+[New LWP 488961]
+[New LWP 488960]
+[New LWP 488959]
+[New LWP 488958]
+[New LWP 488957]
+[New LWP 488956]
+[New LWP 488955]
+[New LWP 488954]
+[New LWP 488953]
+[New LWP 488952]
+[New LWP 488951]
+[New LWP 488950]
+[New LWP 488949]
+[New LWP 488948]
+[New LWP 488947]
+[New LWP 488935]
+[New LWP 488933]
+[New LWP 488932]
+[New LWP 488921]
+[New LWP 488920]
+[New LWP 488919]
+[New LWP 488918]
+[New LWP 488917]
+[New LWP 488914]
+[New LWP 488909]
+[New LWP 488900]
+[New LWP 488899]
+[New LWP 488896]
+[New LWP 488895]
+[New LWP 488894]
+[New LWP 488893]
+[New LWP 488891]
+[New LWP 488890]
+[New LWP 488889]
+[New LWP 488887]
+[New LWP 488886]
+[New LWP 488883]
+[New LWP 488882]
+[New LWP 488881]
+[New LWP 488880]
+[New LWP 488879]
+[New LWP 488878]
+[New LWP 488877]
+[New LWP 488876]
+[New LWP 488875]
+[New LWP 488874]
+[New LWP 488873]
+[New LWP 488872]
+[New LWP 488871]
+[New LWP 488870]
+[New LWP 488869]
+[New LWP 488868]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+
+Thread 58 (Thread 0x7f2dcb1ff6c0 (LWP 488868) "tokio-runtime-w"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=232) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=232) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb1caad in epoll_wait (epfd=<optimized out>, events=<optimized out>, maxevents=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#4  0x000055b72947aca5 in ??? ()
+#5  0x000055b72947541f in ??? ()
+#6  0x000055b729453624 in ??? ()
+#7  0x000055b72944ec52 in ??? ()
+#8  0x000055b72944ff57 in ??? ()
+#9  0x000055b729459908 in ??? ()
+#10 0x000055b72946b190 in ??? ()
+#11 0x000055b729451a0d in ??? ()
+#12 0x000055b72946996d in ??? ()
+#13 0x000055b729462475 in ??? ()
+#14 0x000055b729449db1 in ??? ()
+#15 0x000055b72946579b in ??? ()
+#16 0x000055b72945eba3 in ??? ()
+#17 0x000055b72946fce3 in ??? ()
+#18 0x000055b7294bef7f in ??? ()
+#19 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#20 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 57 (Thread 0x7f2dcaffe6c0 (LWP 488869) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 56 (Thread 0x7f2dc3fff6c0 (LWP 488870) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 55 (Thread 0x7f2dcadfd6c0 (LWP 488871) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 54 (Thread 0x7f2dcabfc6c0 (LWP 488872) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 53 (Thread 0x7f2dca9fb6c0 (LWP 488873) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 52 (Thread 0x7f2dca7fa6c0 (LWP 488874) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 51 (Thread 0x7f2dca5f96c0 (LWP 488875) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 50 (Thread 0x7f2dca3f86c0 (LWP 488876) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 49 (Thread 0x7f2dca1f76c0 (LWP 488877) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 48 (Thread 0x7f2dc9ff66c0 (LWP 488878) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 47 (Thread 0x7f2dc9df56c0 (LWP 488879) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 46 (Thread 0x7f2dc9bf46c0 (LWP 488880) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 45 (Thread 0x7f2dc99f36c0 (LWP 488881) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 44 (Thread 0x7f2dc97f26c0 (LWP 488882) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 43 (Thread 0x7f2dc95f16c0 (LWP 488883) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 42 (Thread 0x7f2dc91ef6c0 (LWP 488886) "pool-spawner"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x00007f2de66d31c4 in g_cond_wait () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#2  0x00007f2de666977b in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#3  0x00007f2de66d3b80 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#4  0x00007f2de66d38c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#6  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 41 (Thread 0x7f2dc3dfe6c0 (LWP 488887) "gmain"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f2de66a26cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f2de66a2d60 in g_main_context_iteration () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f2de66a2db1 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#7  0x00007f2de66d38c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 40 (Thread 0x7f2dc2dfc6c0 (LWP 488889) "gdbus"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f2de66a26cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f2de66a305f in g_main_loop_run () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f2ddfd31c9a in ??? () at /lib/x86_64-linux-gnu/libgio-2.0.so.0
+#7  0x00007f2de66d38c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 39 (Thread 0x7f2dc25fb6c0 (LWP 488890) "dconf worker"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f2de66a26cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f2de66a2d60 in g_main_context_iteration () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f2dd5d79add in ??? () at /usr/lib/x86_64-linux-gnu/gio/modules/libdconfsettings.so
+#7  0x00007f2de66d38c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 38 (Thread 0x7f2dc85ff6c0 (LWP 488891) "mctier"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2de64cea64 in ??? () at /lib/x86_64-linux-gnu/libdbus-1.so.3
+#5  0x00007f2de64d0011 in ??? () at /lib/x86_64-linux-gnu/libdbus-1.so.3
+#6  0x00007f2de64b5b0d in ??? () at /lib/x86_64-linux-gnu/libdbus-1.so.3
+#7  0x00007f2de64b7fda in ??? () at /lib/x86_64-linux-gnu/libdbus-1.so.3
+#8  0x000055b7292a8a7d in ??? ()
+#9  0x000055b729297040 in ??? ()
+#10 0x000055b72929dd10 in ??? ()
+#11 0x000055b7294bef7f in ??? ()
+#12 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#13 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 37 (Thread 0x7f2dc1dfa6c0 (LWP 488893) "async-io"):
+#0  0x000055b7290558d3 in ??? ()
+#1  0x000055b729055641 in ??? ()
+#2  0x000055b729053342 in ??? ()
+#3  0x000055b7290507d9 in ??? ()
+#4  0x000055b729053f16 in ??? ()
+#5  0x000055b72904c920 in ??? ()
+#6  0x000055b7294bef7f in ??? ()
+#7  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#8  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 36 (Thread 0x7f2dc1bf96c0 (LWP 488894) "zbus::Connectio"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72949d6c5 in ??? ()
+#2  0x000055b729056069 in ??? ()
+#3  0x000055b728fb50b0 in ??? ()
+#4  0x000055b728fe8683 in ??? ()
+#5  0x000055b72901ce00 in ??? ()
+#6  0x000055b7294bef7f in ??? ()
+#7  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#8  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 35 (Thread 0x7f2dc19f86c0 (LWP 488895) "mctier"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=230) at ./nptl/cancellation.c:49
+#2  0x00007f2dddae7fba in __GI___clock_nanosleep (clock_id=<optimized out>, flags=<optimized out>, req=<optimized out>, rem=<optimized out>) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:48
+#3  0x000055b7294b9aa7 in ??? ()
+#4  0x000055b72907fa5d in ??? ()
+#5  0x000055b729091972 in ??? ()
+#6  0x000055b72908fe9d in ??? ()
+#7  0x000055b7294bef7f in ??? ()
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 34 (Thread 0x7f2dc17f76c0 (LWP 488896) "ebsiteDataStore"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2ddf52ae6e in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f2ddf52b275 in WTF::RunLoop::run() () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 33 (Thread 0x7f2dc0ff66c0 (LWP 488899) "PressureMonitor"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=a3@entry=0, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f2dcc060150, expected=0, op=<optimized out>, abstime=0x7f2dc0ff4388, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f2dcc060150, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x7f2dc0ff4388, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f2dcc060150, expected=expected@entry=0, clockid=clockid@entry=0, abstime=abstime@entry=0x7f2dc0ff4388, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e31d in __pthread_cond_wait_common (cond=0x7f2dcc060130, mutex=0x7f2dcc060108, clockid=0, abstime=0x7f2dc0ff4388) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_timedwait64 (cond=0x7f2dcc060130, mutex=0x7f2dcc060108, abstime=0x7f2dc0ff4388) at ./nptl/pthread_cond_wait.c:483
+#7  0x00007f2ddf530bfa in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddf4611c4 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#9  0x00007f2dde757310 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#10 0x00007f2ddf4be310 in WTF::sleep(WTF::Seconds) () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#11 0x00007f2de16317f2 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libwebkit2gtk-4.1.so.0
+#12 0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#13 0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#14 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#15 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 32 (Thread 0x7f2db9fff6c0 (LWP 488900) "[pango] fontcon"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x00007f2de66d31c4 in g_cond_wait () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#2  0x00007f2de666977b in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#3  0x00007f2de6669c2b in g_async_queue_pop () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#4  0x00007f2dd9b2e2a7 in ??? () at /lib/x86_64-linux-gnu/libpangoft2-1.0.so.0
+#5  0x00007f2de66d38c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#7  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 31 (Thread 0x7f2db97fe6c0 (LWP 488909) "mctier:cs0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b76248e290, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b76248e290, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b76248e290, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b76248e270, mutex=0x55b76248e240, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b76248e270, mutex=0x55b76248e240) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 30 (Thread 0x7f2db8ffd6c0 (LWP 488914) "mctier:disk$0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b7625f6810, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b7625f6810, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b7625f6810, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b7625f67f0, mutex=0x55b7625f67c0, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b7625f67f0, mutex=0x55b7625f67c0) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 29 (Thread 0x7f2d113ff6c0 (LWP 488917) "mctier:sh0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b762499c4c, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b762499c4c, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b762499c4c, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b762499c28, mutex=0x55b762499bf8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b762499c28, mutex=0x55b762499bf8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 28 (Thread 0x7f2d10bfe6c0 (LWP 488918) "mctier:sh_opt0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b762499dfc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b762499dfc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b762499dfc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b762499dd8, mutex=0x55b762499da8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b762499dd8, mutex=0x55b762499da8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 27 (Thread 0x7f2d0a3ff6c0 (LWP 488919) "mctier:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b7625abdd0, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b7625abdd0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b7625abdd0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b7625abdb0, mutex=0x55b7625abd80, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b7625abdb0, mutex=0x55b7625abd80) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 26 (Thread 0x7f2d09bfe6c0 (LWP 488920) "mctier:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b76261d1a0, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b76261d1a0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b76261d1a0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b76261d180, mutex=0x55b76261d150, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b76261d180, mutex=0x55b76261d150) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 25 (Thread 0x7f2d093fd6c0 (LWP 488921) "mctier:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b76265f200, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b76265f200, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b76265f200, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b76265f1e0, mutex=0x55b76265f1b0, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b76265f1e0, mutex=0x55b76265f1b0) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 24 (Thread 0x7f2bdaffd6c0 (LWP 488932) "mctier:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b7628401c0, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b7628401c0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b7628401c0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b7628401a0, mutex=0x55b762840170, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b7628401a0, mutex=0x55b762840170) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 23 (Thread 0x7f2bda7fc6c0 (LWP 488933) "mctier:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x55b762882088, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x55b762882088, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x55b762882088, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x55b762882068, mutex=0x55b762882038, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x55b762882068, mutex=0x55b762882038) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 22 (Thread 0x7f2bd9ffb6c0 (LWP 488935) "mctier:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f2db85320cc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f2db85320cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f2ddda9bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f2db85320cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f2ddda9e158 in __pthread_cond_wait_common (cond=0x7f2db85320a8, mutex=0x7f2db8532078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f2db85320a8, mutex=0x7f2db8532078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f2d119afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f2d1197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f2d119afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 21 (Thread 0x7f2bdbfff6c0 (LWP 488947) "tokio-runtime-w"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=232) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=0, nr=232) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb1caad in epoll_wait (epfd=<optimized out>, events=<optimized out>, maxevents=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/epoll_wait.c:30
+#4  0x000055b72947aca5 in ??? ()
+#5  0x000055b72947541f in ??? ()
+#6  0x000055b729453624 in ??? ()
+#7  0x000055b72944ec52 in ??? ()
+#8  0x000055b72944ff57 in ??? ()
+#9  0x000055b729459908 in ??? ()
+#10 0x000055b72946b190 in ??? ()
+#11 0x000055b729451a0d in ??? ()
+#12 0x000055b72946996d in ??? ()
+#13 0x000055b729462475 in ??? ()
+#14 0x000055b729449db1 in ??? ()
+#15 0x000055b72946579b in ??? ()
+#16 0x000055b72945eba3 in ??? ()
+#17 0x000055b72946fce3 in ??? ()
+#18 0x000055b7294bef7f in ??? ()
+#19 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#20 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 20 (Thread 0x7f2bdb7fe6c0 (LWP 488948) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 19 (Thread 0x7f2db85316c0 (LWP 488949) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 18 (Thread 0x7f2db83306c0 (LWP 488950) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 17 (Thread 0x7f2d103fd6c0 (LWP 488951) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 16 (Thread 0x7f2d083fb6c0 (LWP 488952) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 15 (Thread 0x7f2bd97fa6c0 (LWP 488953) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 14 (Thread 0x7f2bd95f96c0 (LWP 488954) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 13 (Thread 0x7f2bd93f86c0 (LWP 488955) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 12 (Thread 0x7f2bd91f76c0 (LWP 488956) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 11 (Thread 0x7f2bd8ff66c0 (LWP 488957) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 10 (Thread 0x7f2bd8df56c0 (LWP 488958) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 9 (Thread 0x7f2bd8bf46c0 (LWP 488959) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 8 (Thread 0x7f2bd89f36c0 (LWP 488960) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 7 (Thread 0x7f2bd87f26c0 (LWP 488961) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 6 (Thread 0x7f2bd85f16c0 (LWP 488962) "tokio-runtime-w"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x000055b72947e6f9 in ??? ()
+#2  0x000055b72946bc2e in ??? ()
+#3  0x000055b72944ec91 in ??? ()
+#4  0x000055b72944ff57 in ??? ()
+#5  0x000055b729459908 in ??? ()
+#6  0x000055b72946b190 in ??? ()
+#7  0x000055b729451a0d in ??? ()
+#8  0x000055b72946996d in ??? ()
+#9  0x000055b729462475 in ??? ()
+#10 0x000055b729449db1 in ??? ()
+#11 0x000055b72946579b in ??? ()
+#12 0x000055b72945eba3 in ??? ()
+#13 0x000055b72946fce3 in ??? ()
+#14 0x000055b7294bef7f in ??? ()
+#15 0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#16 0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 5 (Thread 0x7f2b8bfff6c0 (LWP 488963) "ReceiveQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2ddf52ae6e in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f2ddf52b275 in WTF::RunLoop::run() () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 4 (Thread 0x7f2b8b7fe6c0 (LWP 488964) "ReceiveQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2ddf52ae6e in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f2ddf52b275 in WTF::RunLoop::run() () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 3 (Thread 0x7f2b8a1fe6c0 (LWP 499251) "ReceiveQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2ddf52ae6e in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f2ddf52b275 in WTF::RunLoop::run() () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 2 (Thread 0x7f2dc35fd6c0 (LWP 499393) "HashSaltStorage"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f2ddf52ae6e in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f2ddf52b275 in WTF::RunLoop::run() () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f2ddf4c1e73 in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f2ddf5303ea in ??? () at /home/xing/webkit-build/private-root/usr/lib/x86_64-linux-gnu/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f2ddda9eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f2dddb1c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 1 (Thread 0x7f2dd5da6fc0 (LWP 488864) "mctier"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f2ddda9b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f2ddda9b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f2dddb0feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f2de66a26cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f2de66a2d60 in g_main_context_iteration () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f2de0007155 in gtk_main_iteration_do () at /lib/x86_64-linux-gnu/libgtk-3.so.0
+#7  0x000055b7293104d7 in ??? ()
+#8  0x000055b7286d59be in ??? ()
+#9  0x000055b7285fe04c in ??? ()
+#10 0x000055b7286513a6 in ??? ()
+#11 0x000055b7284e11bc in ??? ()
+#12 0x000055b7284b59b3 in ??? ()
+#13 0x000055b7284b59c9 in ??? ()
+#14 0x000055b7294b54d7 in ??? ()
+#15 0x000055b7284b5a15 in ??? ()
+#16 0x00007f2ddda35ca8 in __libc_start_call_main (main=main@entry=0x55b7284b59f0, argc=argc@entry=1, argv=argv@entry=0x7fff07ee6858) at ../sysdeps/nptl/libc_start_call_main.h:58
+#17 0x00007f2ddda35d65 in __libc_start_main_impl (main=0x55b7284b59f0, argc=1, argv=0x7fff07ee6858, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fff07ee6848) at ../csu/libc-start.c:360
+#18 0x000055b7284b58e1 in ??? ()
+[Inferior 1 (process 488864) detached]
