@@ -90,3 +90,9 @@ Thumbs.db
 /0
 /buildout.txt
 /latest.json
+
+# 第三方二进制：EasyTier Linux 版（无扩展名，同受版权/许可限制，不入库）
+src-tauri/resources/binaries/easytier-core
+src-tauri/resources/binaries/easytier-cli
+src-tauri/resources/binaries/easytier-panic.log
+src-tauri/resources/binaries/linux/

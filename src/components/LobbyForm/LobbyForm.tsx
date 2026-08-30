@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Form, Input, Button, Space, Typography, Modal, Switch, App as AntdApp } from 'antd';
+import MaskedTextInput from '../MaskedTextInput/MaskedTextInput';
 import { invoke } from '@tauri-apps/api/core';
 import { readText } from '@tauri-apps/plugin-clipboard-manager';
 import { useAppStore } from '../../stores';
@@ -1301,7 +1302,9 @@ export const LobbyForm: React.FC<LobbyFormProps> = ({ mode, onClose }) => {
                 },
               ]}
             >
-              <Input.Password
+              {/* Linux 适配：WebKitGTK + fcitx5 下 type=password 掩码框吞按键，
+                  改用文本框 + CSS 圆点伪装（详见 MaskedTextInput 组件注释） */}
+              <MaskedTextInput
                 placeholder={tl('留空创建无密码大厅，或输入 8-32 位密码', 'Leave blank for no password, or enter 8-32 characters')}
                 size="large"
                 disabled={loading}
