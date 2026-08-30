@@ -291,6 +291,12 @@ impl LobbyManager {
     pub fn validate_password(password: &str) -> Result<(), LobbyError> {
         let trimmed = password.trim();
 
+        // [Linux 兼容适配] 前端支持「留空创建无密码大厅」，后端同步放行空密码：
+        // EasyTier 网络密钥为空时按网络名建网，协议本身支持。非空密码仍走完整校验。
+        if trimmed.is_empty() {
+            return Ok(());
+        }
+
         // 检查长度
         if trimmed.len() < 8 {
             return Err(LobbyError::InvalidInput(
@@ -1385,6 +1391,16 @@ mod tests {
         if let Err(LobbyError::InvalidInput(msg)) = result {
             assert!(msg.contains("密码"));
         }
+    }
+
+    #[test]
+    fn test_validate_password_passwordless() {
+        // [Linux 兼容适配] 空密码 = 无密码大厅，放行；非空仍走完整校验
+        assert!(LobbyManager::validate_password("").is_ok());
+        assert!(LobbyManager::validate_password("abcd1234").is_ok());
+        assert!(LobbyManager::validate_password("short1").is_err());
+        assert!(LobbyManager::validate_password("12345678").is_err()); // 无字母
+        assert!(LobbyManager::validate_password("abcdefgh").is_err()); // 无数字
     }
 
     #[test]
