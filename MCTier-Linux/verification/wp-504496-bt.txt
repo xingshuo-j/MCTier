@@ -1,0 +1,535 @@
+[New LWP 504575]
+[New LWP 504563]
+[New LWP 504562]
+[New LWP 504561]
+[New LWP 504560]
+[New LWP 504559]
+[New LWP 504558]
+[New LWP 504557]
+[New LWP 504556]
+[New LWP 504555]
+[New LWP 504554]
+[New LWP 504553]
+[New LWP 504552]
+[New LWP 504551]
+[New LWP 504550]
+[New LWP 504549]
+[New LWP 504548]
+[New LWP 504547]
+[New LWP 504546]
+[New LWP 504545]
+[New LWP 504544]
+[New LWP 504543]
+[New LWP 504542]
+[New LWP 504541]
+[New LWP 504540]
+[New LWP 504538]
+[New LWP 504530]
+[New LWP 504529]
+[New LWP 504527]
+[New LWP 504526]
+[New LWP 504525]
+[New LWP 504522]
+[New LWP 504521]
+[New LWP 504520]
+[New LWP 504519]
+[New LWP 504518]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+__syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+
+Thread 37 (Thread 0x7f73e2fff6c0 (LWP 504518) "WebKitWebProces"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=a3@entry=2618, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e300e68c, expected=2618, op=<optimized out>, abstime=0x7f73e2ffe990, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e300e68c, expected=expected@entry=2618, clockid=clockid@entry=0, abstime=abstime@entry=0x7f73e2ffe990, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e300e68c, expected=expected@entry=2618, clockid=clockid@entry=0, abstime=abstime@entry=0x7f73e2ffe990, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e31d in __pthread_cond_wait_common (cond=0x7f73e300e668, mutex=0x7f73e300e640, clockid=0, abstime=0x7f73e2ffe990) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_timedwait64 (cond=0x7f73e300e668, mutex=0x7f73e300e640, abstime=0x7f73e2ffe990) at ./nptl/pthread_cond_wait.c:483
+#7  0x00007f73f4b7cda8 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 36 (Thread 0x7f739e1fd6c0 (LWP 504519) "EventDispatcher"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 35 (Thread 0x7f739d9fc6c0 (LWP 504520) "rruptDispatcher"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 34 (Thread 0x7f739d1fb6c0 (LWP 504521) "uggerDispatcher"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 33 (Thread 0x7f739c9fa6c0 (LWP 504522) "ReceiveQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 32 (Thread 0x7f738ffff6c0 (LWP 504525) "ReceiveQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 31 (Thread 0x7f738f7fe6c0 (LWP 504526) "pool-spawner"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x00007f73f529e1c4 in g_cond_wait () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#2  0x00007f73f523477b in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#3  0x00007f73f529eb80 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#4  0x00007f73f529e8c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#6  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 30 (Thread 0x7f738effd6c0 (LWP 504527) "gmain"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f73f050feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f73f526d6cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f73f526dd60 in g_main_context_iteration () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f73f526ddb1 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#7  0x00007f73f529e8c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 29 (Thread 0x7f738dffb6c0 (LWP 504529) "gdbus"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=8, a6=a6@entry=0, nr=271) at ./nptl/cancellation.c:75
+#3  0x00007f73f050feae in __GI_ppoll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>, sigmask=<optimized out>) at ../sysdeps/unix/sysv/linux/ppoll.c:42
+#4  0x00007f73f526d6cc in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#5  0x00007f73f526e05f in g_main_loop_run () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#6  0x00007f73f6061c9a in ??? () at /lib/x86_64-linux-gnu/libgio-2.0.so.0
+#7  0x00007f73f529e8c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 28 (Thread 0x7f738d7fa6c0 (LWP 504530) "WebKitWebP:cs0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x5635797eadf4, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x5635797eadf4, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5635797eadf4, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x5635797eadd0, mutex=0x5635797eada0, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x5635797eadd0, mutex=0x5635797eada0) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 27 (Thread 0x7f738cff96c0 (LWP 504538) "WebKitW:disk$0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x56357985d370, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x56357985d370, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x56357985d370, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x56357985d350, mutex=0x56357985d320, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x56357985d350, mutex=0x56357985d320) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 26 (Thread 0x7f73679ff6c0 (LWP 504540) "WebKitWebP:sh0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x5635797ed7d8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x5635797ed7d8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5635797ed7d8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x5635797ed7b8, mutex=0x5635797ed788, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x5635797ed7b8, mutex=0x5635797ed788) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 25 (Thread 0x7f73671fe6c0 (LWP 504541) "WebKit:sh_opt0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x5635797ed988, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x5635797ed988, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5635797ed988, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x5635797ed968, mutex=0x5635797ed938, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x5635797ed968, mutex=0x5635797ed938) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 24 (Thread 0x7f73669fd6c0 (LWP 504542) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x56357986f0b0, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x56357986f0b0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x56357986f0b0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x56357986f090, mutex=0x56357986f060, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x56357986f090, mutex=0x56357986f060) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 23 (Thread 0x7f73661fc6c0 (LWP 504543) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x5635798c1050, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x5635798c1050, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x5635798c1050, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x5635798c1030, mutex=0x5635798c1000, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x5635798c1030, mutex=0x5635798c1000) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 22 (Thread 0x7f73659fb6c0 (LWP 504544) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x563579905c10, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x563579905c10, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x563579905c10, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x563579905bf0, mutex=0x563579905bc0, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x563579905bf0, mutex=0x563579905bc0) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 21 (Thread 0x7f73651fa6c0 (LWP 504545) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x56357996ec40, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x56357996ec40, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x56357996ec40, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x56357996ec20, mutex=0x56357996ebf0, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x56357996ec20, mutex=0x56357996ebf0) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 20 (Thread 0x7f73649f96c0 (LWP 504546) "WebKitWe:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e26455f8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e26455f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e26455f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f73e26455d8, mutex=0x7f73e26455a8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f73e26455d8, mutex=0x7f73e26455a8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 19 (Thread 0x7f733ffff6c0 (LWP 504547) "WebKitWebP:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f739c12f0cc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f739c12f0cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f739c12f0cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f739c12f0a8, mutex=0x7f739c12f078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f739c12f0a8, mutex=0x7f739c12f078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 18 (Thread 0x7f733f7fe6c0 (LWP 504548) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x563579a6ff70, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x563579a6ff70, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x563579a6ff70, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x563579a6ff50, mutex=0x563579a6ff20, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x563579a6ff50, mutex=0x563579a6ff20) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 17 (Thread 0x7f733effd6c0 (LWP 504549) "WebKitWe:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e056f5f8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e056f5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e056f5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f73e056f5d8, mutex=0x7f73e056f5a8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f73e056f5d8, mutex=0x7f73e056f5a8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 16 (Thread 0x7f733e7fc6c0 (LWP 504550) "WebKitWebP:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f739c0640c8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f739c0640c8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f739c0640c8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f739c0640a8, mutex=0x7f739c064078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f739c0640a8, mutex=0x7f739c064078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 15 (Thread 0x7f733dffb6c0 (LWP 504551) "eadedCompositor"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 14 (Thread 0x7f733d7fa6c0 (LWP 504552) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f732c00fcd0, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f732c00fcd0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f732c00fcd0, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f732c00fcb0, mutex=0x7f732c00fc80, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f732c00fcb0, mutex=0x7f732c00fc80) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 13 (Thread 0x7f733cff96c0 (LWP 504553) "WebKitWe:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e053a5f8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e053a5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e053a5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f73e053a5d8, mutex=0x7f73e053a5a8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f73e053a5d8, mutex=0x7f73e053a5a8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 12 (Thread 0x7f731ffff6c0 (LWP 504554) "WebKitWebP:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f738c32e0cc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f738c32e0cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f738c32e0cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f738c32e0a8, mutex=0x7f738c32e078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f738c32e0a8, mutex=0x7f738c32e078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 11 (Thread 0x7f731f7fe6c0 (LWP 504555) "Core: Scrolling"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 10 (Thread 0x7f731effd6c0 (LWP 504556) "SkiaGPUWorker"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e11e8150, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e11e8150, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e11e8150, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f73e11e8130, mutex=0x7f73e11e8108, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f73e11e8130, mutex=0x7f73e11e8108) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73f4b30bb4 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f4a611c4 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#9  0x00007f73f3d57310 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#10 0x00007f73f4a32846 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#11 0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#12 0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#13 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#14 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 9 (Thread 0x7f731e7fc6c0 (LWP 504557) "SkiaGPUWorker"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f73e11dc150, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f73e11dc150, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f73e11dc150, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f73e11dc130, mutex=0x7f73e11dc108, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f73e11dc130, mutex=0x7f73e11dc108) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73f4b30bb4 in WTF::ThreadCondition::timedWait(WTF::Mutex&, WTF::WallTime) () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f4a611c4 in WTF::ParkingLot::parkConditionallyImpl(void const*, WTF::ScopedLambda<bool ()> const&, WTF::ScopedLambda<void ()> const&, WTF::TimeWithDynamicClockType const&) () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#9  0x00007f73f3d57310 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#10 0x00007f73f4a32846 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#11 0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#12 0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#13 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#14 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 8 (Thread 0x7f731dffb6c0 (LWP 504558) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f731400f850, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f731400f850, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f731400f850, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f731400f830, mutex=0x7f731400f800, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f731400f830, mutex=0x7f731400f800) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 7 (Thread 0x7f731d7fa6c0 (LWP 504559) "WebKitWe:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f738c11e5f8, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f738c11e5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f738c11e5f8, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f738c11e5d8, mutex=0x7f738c11e5a8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f738c11e5d8, mutex=0x7f738c11e5a8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 6 (Thread 0x7f731cff96c0 (LWP 504560) "WebKitWebP:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f738c0530cc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f738c0530cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f738c0530cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f738c0530a8, mutex=0x7f738c053078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f738c0530a8, mutex=0x7f738c053078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 5 (Thread 0x7f7307fff6c0 (LWP 504561) "WebKit:traceq0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f730800f850, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f730800f850, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f730800f850, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f730800f830, mutex=0x7f730800f800, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f730800f830, mutex=0x7f730800f800) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 4 (Thread 0x7f73077fe6c0 (LWP 504562) "WebKitWe:gdrv0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f738c01d5fc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f738c01d5fc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f738c01d5fc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f738c01d5d8, mutex=0x7f738c01d5a8, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f738c01d5d8, mutex=0x7f738c01d5a8) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 3 (Thread 0x7f7306ffd6c0 (LWP 504563) "WebKitWebP:gl0"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=<optimized out>, a5=a5@entry=0, a6=a6@entry=4294967295, nr=202) at ./nptl/cancellation.c:49
+#2  0x00007f73f049bc8c in __futex_abstimed_wait_common64 (private=0, futex_word=0x7f7373f350cc, expected=<optimized out>, op=<optimized out>, abstime=0x0, cancel=true) at ./nptl/futex-internal.c:57
+#3  __futex_abstimed_wait_common (futex_word=futex_word@entry=0x7f7373f350cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0, cancel=cancel@entry=true) at ./nptl/futex-internal.c:87
+#4  0x00007f73f049bceb in __GI___futex_abstimed_wait_cancelable64 (futex_word=futex_word@entry=0x7f7373f350cc, expected=<optimized out>, clockid=clockid@entry=0, abstime=abstime@entry=0x0, private=private@entry=0) at ./nptl/futex-internal.c:139
+#5  0x00007f73f049e158 in __pthread_cond_wait_common (cond=0x7f7373f350a8, mutex=0x7f7373f35078, clockid=0, abstime=0x0) at ./nptl/pthread_cond_wait.c:426
+#6  ___pthread_cond_wait (cond=0x7f7373f350a8, mutex=0x7f7373f35078) at ./nptl/pthread_cond_wait.c:458
+#7  0x00007f73719afc5d in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#8  0x00007f737197b2ab in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#9  0x00007f73719afb8b in ??? () at /lib/x86_64-linux-gnu/libgallium-25.0.7-2+deb13u1.so
+#10 0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#11 0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 2 (Thread 0x7f73027ff6c0 (LWP 504575) "CryptoQueue"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f4ac1e73 in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#7  0x00007f73f4b303ea in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#8  0x00007f73f049eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#9  0x00007f73f051c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+
+Thread 1 (Thread 0x7f73eb176680 (LWP 504496) "WebKitWebProces"):
+#0  __syscall_cancel_arch () at ../sysdeps/unix/sysv/linux/x86_64/syscall_cancel.S:56
+#1  0x00007f73f049b668 in __internal_syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:49
+#2  0x00007f73f049b6ad in __syscall_cancel (a1=<optimized out>, a2=<optimized out>, a3=<optimized out>, a4=a4@entry=0, a5=a5@entry=0, a6=a6@entry=0, nr=7) at ./nptl/cancellation.c:75
+#3  0x00007f73f050fa06 in __GI___poll (fds=<optimized out>, nfds=<optimized out>, timeout=<optimized out>) at ../sysdeps/unix/sysv/linux/poll.c:29
+#4  0x00007f73f4b2ae6e in ??? () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#5  0x00007f73f4b2b275 in WTF::RunLoop::run() () at /home/xing/.local/lib/mctier-webkit/libjavascriptcoregtk-4.1.so.0
+#6  0x00007f73f79aa652 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#7  0x00007f73f0435ca8 in __libc_start_call_main (main=main@entry=0x563547da4140, argc=argc@entry=3, argv=argv@entry=0x7fff3e1911b8) at ../sysdeps/nptl/libc_start_call_main.h:58
+#8  0x00007f73f0435d65 in __libc_start_main_impl (main=0x563547da4140, argc=3, argv=0x7fff3e1911b8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fff3e1911a8) at ../csu/libc-start.c:360
+#9  0x0000563547da4071 in ??? ()
+[Inferior 1 (process 504496) detached]
