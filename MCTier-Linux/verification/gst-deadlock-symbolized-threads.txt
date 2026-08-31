@@ -1,0 +1,62 @@
+#0  futex_wait (futex_word=0x5572cf4ad5d0, expected=2, private=0) at ../sysdeps/nptl/futex-internal.h:146
+#1  __GI___lll_lock_wait (futex=futex@entry=0x5572cf4ad5d0, private=0) at ./nptl/lowlevellock.c:49
+#2  0x00007fad710a1fd9 in lll_mutex_lock_optimized (mutex=0x5572cf4ad5d0) at ./nptl/pthread_mutex_lock.c:48
+#3  ___pthread_mutex_lock (mutex=0x5572cf4ad5d0) at ./nptl/pthread_mutex_lock.c:128
+#4  0x00007fad70ca5a48 in gst_pad_send_event_unchecked (pad=pad@entry=0x5572cf4ad370, event=event@entry=0x7faa6c003380, type=type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5972
+#5  0x00007fad70ca60e2 in gst_pad_push_event_unchecked (pad=pad@entry=0x5572cf4ac3a0, event=0x7faa6c003380, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5666
+#6  0x00007fad70ca6b39 in push_sticky (pad=pad@entry=0x5572cf4ac3a0, ev=ev@entry=0x7faa827fb180, user_data=user_data@entry=0x7faa827fb1e0) at ../gst/gstpad.c:4104
+#7  0x00007fad70ca37cc in events_foreach (pad=pad@entry=0x5572cf4ac3a0, func=func@entry=0x7fad70ca6a80 <push_sticky>, user_data=user_data@entry=0x7faa827fb1e0) at ../gst/gstpad.c:622
+#8  0x00007fad70ca685e in check_sticky (pad=pad@entry=0x5572cf4ac3a0, event=event@entry=0x7faa6c003160) at ../gst/gstpad.c:4164
+#9  0x00007fad70cb0020 in gst_pad_push_event (pad=0x5572cf4ac3a0, event=0x7faa6c003160) at ../gst/gstpad.c:5806
+#10 0x00007fad7a79a356 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#11 0x00007fad7a799038 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#12 0x00007fad7a75c32d in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#13 0x00007fad795b7550 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#14 0x00007fad79596171 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#15 0x00007fad7956c20e in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#16 0x00007fad7959fae4 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#17 0x00007fad7a4f49f4 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#18 0x00007fad7a4f4477 in ??? () at /home/xing/.local/lib/mctier-webkit/libwebkit2gtk-4.1.so.0
+#19 0x00007fad70ce4692 in gst_task_func (task=0x5572cf491d10) at ../gst/gsttask.c:399
+#20 0x00007fad75e92072 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#21 0x00007fad75e918c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#22 0x00007fad7109eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#23 0x00007fad7111c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+[Switching to thread 12 (Thread 0x7faa63fff6c0 (LWP 504974))]
+
+===
+
+#0  futex_wait (futex_word=0x5572cf07c5f0, expected=2, private=0) at ../sysdeps/nptl/futex-internal.h:146
+#1  __GI___lll_lock_wait (futex=futex@entry=0x5572cf07c5f0, private=0) at ./nptl/lowlevellock.c:49
+#2  0x00007fad710a1fd9 in lll_mutex_lock_optimized (mutex=0x5572cf07c5f0) at ./nptl/pthread_mutex_lock.c:48
+#3  ___pthread_mutex_lock (mutex=0x5572cf07c5f0) at ./nptl/pthread_mutex_lock.c:128
+#4  0x00007fad70ca5a48 in gst_pad_send_event_unchecked (pad=pad@entry=0x5572ced7cb00, event=event@entry=0x7faa5c0011e0, type=type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5972
+#5  0x00007fad70ca60e2 in gst_pad_push_event_unchecked (pad=pad@entry=0x5572cf31b5b0, event=0x7faa5c0011e0, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5666
+#6  0x00007fad70ca6b39 in push_sticky (pad=pad@entry=0x5572cf31b5b0, ev=ev@entry=0x7faa63ffe070, user_data=user_data@entry=0x7faa63ffe0d0) at ../gst/gstpad.c:4104
+#7  0x00007fad70ca37cc in events_foreach (pad=pad@entry=0x5572cf31b5b0, func=func@entry=0x7fad70ca6a80 <push_sticky>, user_data=user_data@entry=0x7faa63ffe0d0) at ../gst/gstpad.c:622
+#8  0x00007fad70ca685e in check_sticky (pad=pad@entry=0x5572cf31b5b0, event=event@entry=0x7faa5c0011e0) at ../gst/gstpad.c:4164
+#9  0x00007fad70cb0020 in gst_pad_push_event (pad=0x5572cf31b5b0, event=0x7faa5c0011e0) at ../gst/gstpad.c:5806
+#10 0x00007fad70ca57eb in gst_pad_send_event_unchecked (pad=pad@entry=0x5572cf4adc50, event=event@entry=0x7faa5c0011e0, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:6044
+#11 0x00007fad70ca60e2 in gst_pad_push_event_unchecked (pad=pad@entry=0x5572cf4acff0, event=0x7faa5c0011e0, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5666
+#12 0x00007fad70ca6b39 in push_sticky (pad=pad@entry=0x5572cf4acff0, ev=ev@entry=0x7faa63ffe360, user_data=user_data@entry=0x7faa63ffe3c0) at ../gst/gstpad.c:4104
+#13 0x00007fad70ca37cc in events_foreach (pad=pad@entry=0x5572cf4acff0, func=func@entry=0x7fad70ca6a80 <push_sticky>, user_data=user_data@entry=0x7faa63ffe3c0) at ../gst/gstpad.c:622
+#14 0x00007fad70ca685e in check_sticky (pad=pad@entry=0x5572cf4acff0, event=event@entry=0x7faa5c0011e0) at ../gst/gstpad.c:4164
+#15 0x00007fad70cb0020 in gst_pad_push_event (pad=pad@entry=0x5572cf4acff0, event=0x7faa5c0011e0) at ../gst/gstpad.c:5806
+#16 0x00007fad70cb019b in event_forward_func (pad=pad@entry=0x5572cf4acff0, data=data@entry=0x7faa63ffe510) at ../gst/gstpad.c:3165
+#17 0x00007fad70cabfb6 in gst_pad_forward (pad=pad@entry=0x5572cf4ad370, forward=forward@entry=0x7fad70cb00e0 <event_forward_func>, user_data=user_data@entry=0x7faa63ffe510) at ../gst/gstpad.c:3119
+#18 0x00007fad70cac0e1 in gst_pad_event_default (pad=0x5572cf4ad370, parent=<optimized out>, event=0x7faa5c0011e0) at ../gst/gstpad.c:3216
+#19 0x00007fad70ca57eb in gst_pad_send_event_unchecked (pad=pad@entry=0x5572cf4ad370, event=event@entry=0x7faa5c0011e0, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:6044
+#20 0x00007fad70ca60e2 in gst_pad_push_event_unchecked (pad=pad@entry=0x5572cf4ac3a0, event=0x7faa5c0011e0, type=<optimized out>, type@entry=GST_PAD_PROBE_TYPE_EVENT_DOWNSTREAM) at ../gst/gstpad.c:5666
+#21 0x00007fad70ca6b39 in push_sticky (pad=pad@entry=0x5572cf4ac3a0, ev=ev@entry=0x7faa63ffe730, user_data=user_data@entry=0x7faa63ffe790) at ../gst/gstpad.c:4104
+#22 0x00007fad70ca37cc in events_foreach (pad=pad@entry=0x5572cf4ac3a0, func=func@entry=0x7fad70ca6a80 <push_sticky>, user_data=user_data@entry=0x7faa63ffe790) at ../gst/gstpad.c:622
+#23 0x00007fad70ca685e in check_sticky (pad=pad@entry=0x5572cf4ac3a0, event=event@entry=0x7faa5c000fc0) at ../gst/gstpad.c:4164
+#24 0x00007fad70cb0020 in gst_pad_push_event (pad=0x5572cf4ac3a0, event=event@entry=0x7faa5c000fc0) at ../gst/gstpad.c:5806
+#25 0x00007fad70dc6cc0 in gst_base_src_send_stream_start (src=0x5572cf4ac0a0) at ../libs/gst/base/gstbasesrc.c:992
+#26 0x00007fad70dc8ab8 in gst_base_src_send_stream_start (src=0x5572cf4ac0a0) at ../libs/gst/base/gstbasesrc.c:3171
+#27 gst_base_src_loop (pad=0x5572cf4ac3a0) at ../libs/gst/base/gstbasesrc.c:2910
+#28 0x00007fad70ce4692 in gst_task_func (task=0x5572cf4b17c0) at ../gst/gsttask.c:399
+#29 0x00007fad75e92072 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#30 0x00007fad75e918c3 in ??? () at /lib/x86_64-linux-gnu/libglib-2.0.so.0
+#31 0x00007fad7109eb7b in start_thread (arg=<optimized out>) at ./nptl/pthread_create.c:448
+#32 0x00007fad7111c7f8 in __GI___clone3 () at ../sysdeps/unix/sysv/linux/x86_64/clone3.S:78
+[Inferior 1 (process 504169) detached]
