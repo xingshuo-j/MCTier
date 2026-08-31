@@ -147,6 +147,15 @@ impl HostsManager {
 
         // 重新组合内容
         let new_content = new_lines.join("\n");
+
+        // [Linux 兼容适配] 没有可清理的记录时直接返回：
+        // 写回 hosts 在类 Unix 上经 pkexec 提权（可能弹授权框），
+        // 应用关闭时的例行清理不应在无事可做时打扰用户。
+        if removed_count == 0 {
+            log::info!("✅ 没有发现MCTier hosts记录，无需清理");
+            return Ok(());
+        }
+
         if !new_content.is_empty() && !new_content.ends_with('\n') {
             // 确保文件以换行符结尾
             let new_content = format!("{}\n", new_content);
