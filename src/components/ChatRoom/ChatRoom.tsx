@@ -376,7 +376,9 @@ export const ChatRoom: React.FC = () => {
       }
     } catch (error) {
       console.error('发送聊天消息失败:', error);
-      antdMessage.error(tl('发送消息失败', 'Failed to send message'));
+      // 回滚乐观消息：发送失败时移除列表中那条"假成功"消息，避免用户误以为已送达
+      deleteChatMessage(optimisticMessage.id);
+      antdMessage.error(tl('发送消息失败，已移除待发消息', 'Failed to send message, pending message removed'));
       // 发送失败时恢复输入框内容
       setInputValue(text);
     }

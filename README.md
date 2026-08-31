@@ -1,388 +1,170 @@
 <div align="center">
-  <img src="public/MCTierIcon.png" alt="MCTier Logo" width="120" height="120">
 
-  # MCTier
+  # MCTier for Debian
 
-  **虚拟局域网通用组网工具**
+  **MCTier 的 Debian/Linux 原生适配分支（与官方 Windows / Android 客户端互通）**
 
   <p>
-    <img src="https://img.shields.io/badge/version-3.0.0-blue?style=flat-square" alt="Version">
-    <img src="https://img.shields.io/badge/Windows-10%20%2F%2011-2ea44f?style=flat-square" alt="Windows 10/11">
-    <img src="https://img.shields.io/badge/Android-supported-3ddc84?style=flat-square" alt="Android">
-    <img src="https://img.shields.io/badge/license-Custom-orange?style=flat-square" alt="License">
+    <img src="https://img.shields.io/badge/fork自-upstream%20MCTier-blue?style=flat-square" alt="Fork">
+    <img src="https://img.shields.io/badge/Debian-13%20(trixie)-a80036?style=flat-square" alt="Debian 13">
+    <img src="https://img.shields.io/badge/KDE%20Plasma-6%20Wayland-1d99f3?style=flat-square" alt="KDE Wayland">
+    <img src="https://img.shields.io/badge/EasyTier-2.5.0%20(88a45d11)-2ea44f?style=flat-square" alt="EasyTier">
+    <img src="https://img.shields.io/badge/状态-联机已通%2F媒体推进中-orange?style=flat-square" alt="Status">
   </p>
 
-  **支持 Windows 10/11 与 Android。电脑端和手机端可加入同一个大厅，快速组成跨网络虚拟局域网。当前版本：2.7.5。**
+  [上游仓库](https://github.com/pmh1314520/MCTier)（Windows / Android 官方构建） · [本分支](https://github.com/xingshuo-j/MCTier)
 
-  [GitHub](https://github.com/pmh1314520/MCTier) · [Gitee](https://gitee.com/peng-minghang/mctier) · [快速开始](#快速开始) · [运行预览](#运行预览) · [赞助支持](#赞助支持)
-
-  [English](./README_EN.md) | 简体中文
 </div>
 
 ---
 
 ## 项目简介
 
-MCTier 基于 EasyTier 与 WebRTC，用来把不同网络环境下的设备组到同一个虚拟局域网中。它不是 Minecraft 专属工具，也不只服务游戏场景；只要你需要跨网络访问局域网服务、临时协作、语音沟通、文件夹共享或屏幕共享，都可以用 MCTier 搭一个轻量大厅。
+fork 自 [MCTier](https://github.com/pmh1314520/MCTier)，因为 wine 几乎不可用，于是让 agent 做了对 Debian 系统的支持。
 
-典型用途包括：
+本分支让 MCTier 在 **Debian 13 + KDE Plasma 6 (Wayland)** 的桌面环境下原生运行，
+与官方 **Windows / Android 客户端**互连互通：同一大厅、同一信令、同一 EasyTier 节点、同一聊天协议。
+适配只做平台层，不改动任何协议逻辑——好友使用官方客户端**无需任何改动**。
 
-- 局域网游戏联机，例如 Minecraft、泰拉瑞亚、饥荒等。
-- 跨网络访问本地服务，例如开发调试页面、局域网后台、临时 HTTP 服务。
-- 小团队临时协作，例如语音频道、聊天室、文件夹共享、屏幕共享。
-- 手机与电脑互联，例如手机扫码加入大厅、复制邀请链接加入组网。
+## 当前状态
 
-## 运行预览
+> 保留自实机测试的一手结论，更新随进度同步。
 
-预览图按桌面端与手机端分组，尽量用紧凑布局展示，避免图片过多导致阅读很累。
+目前已实现：**联机房间、发送文字、图片、文件夹共享**。
+在主播的机子上还不能跑通**连麦和屏幕共享**功能（根因与解法见下方"媒体层说明"）。
 
-### Windows 端
+| 功能 | 状态 | 说明 |
+| --- | :---: | --- |
+| 创建 / 加入大厅、二维码邀请、成员列表 | ✅ | 真机验证：与手机官方 APK 同大厅互通 |
+| 发送文字 / 图片 / Emoji、消息弹幕 | ✅ | 纯前端信令 + WebRTC 数据面，跨平台零改动 |
+| 文件夹共享 / 文件传输 | ✅ | axum HTTP 服务器纯 Rust，跨平台 |
+| EasyTier 虚拟组网（TUN） | ✅ | `tun device ready. dev: MCTier_Net`，DHCP 分配 `10.126.126.1/24`（与 Windows 同网段） |
+| Minecraft 世界自动发现 / 游戏快连 | ✅ | 纯 Rust：UDP 组播扫描 + TCP 代理 + 端口预设 |
+| 虚拟域名 Magic DNS | ✅ | `/etc/hosts` 写入，无权限时 pkexec 图形授权 |
+| 开机自启动 / 系统托盘 / 迷你悬浮窗 | ✅ | XDG autostart；libayatana 托盘（KDE 实测正常） |
+| 网络诊断 | ✅ | 真实现：`/sys/class/net` 网卡、ufw/firewalld、ping/UDP 探测 |
+| 语音（连麦） | 🔄 | 见媒体层说明，推进中 |
+| 屏幕共享 / 远程控制 | 🔄 | 同上；被控端键鼠注入已就绪待验 |
+| 回声消除参考（system_audio） | 🟡 | PipeWire monitor 回采已实现，待语音链路通后调优 |
+| MC 启动器助手（注册表检测） | ❌ | Windows 专属，Linux 降级（世界发现/游戏快连不受影响） |
 
-<table>
-  <tr>
-    <td align="center" width="50%">
-      <img src="public/软件预览-主界面.png" alt="Windows 主界面" width="420"><br>
-      <b>主界面</b>
-    </td>
-    <td align="center" width="50%">
-      <img src="public/软件预览-大厅界面.png" alt="Windows 大厅界面" width="420"><br>
-      <b>大厅界面</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="public/软件预览-聊天室.png" alt="Windows 聊天室" width="420"><br>
-      <b>聊天室</b>
-    </td>
-    <td align="center" width="50%">
-      <img src="public/软件预览-文件夹共享.png" alt="Windows 文件夹共享" width="420"><br>
-      <b>文件夹共享</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="public/软件预览-屏幕共享.png" alt="Windows 屏幕共享" width="420"><br>
-      <b>屏幕共享</b>
-    </td>
-    <td align="center" width="50%">
-      <img src="public/软件预览-设置.png" alt="Windows 设置" width="420"><br>
-      <b>设置中心</b>
-    </td>
-  </tr>
-</table>
+### 媒体层说明（连麦 / 屏幕共享的根因）
 
-<details>
-<summary><b>查看更多 Windows 端预览</b></summary>
+Debian 官方 `webkit2gtk` 构建在**编译期未启用 WebRTC**：
+离屏 WebView 探针实测 `RTCPeerConnection === undefined`，且任何运行时设置都无法挽回。
+因此上游的语音/屏幕/远控媒体管线在 Debian 的系统 WebKit 上从未启动过——
+这不是适配引入的回归，而是发行版构建策略问题（上游 Windows 端的 WebView2 不受影响）。
 
-<table>
-  <tr>
-    <td align="center"><img src="public/软件预览-创建大厅.png" alt="创建大厅" width="320"><br><b>创建大厅</b></td>
-    <td align="center"><img src="public/软件预览-加入大厅.png" alt="加入大厅" width="320"><br><b>加入大厅</b></td>
-    <td align="center"><img src="public/软件预览-常用大厅信息.png" alt="常用大厅信息" width="320"><br><b>常用大厅</b></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="3"><img src="public/软件预览-大厅动态设置.png" alt="大厅动态设置" width="420"><br><b>大厅动态设置</b></td>
-  </tr>
-</table>
-</details>
-
-### Android 端
-
-<table>
-  <tr>
-    <td align="center"><img src="public/手机端-主界面.jpg" alt="Android 主界面" width="180"><br><b>主界面</b></td>
-    <td align="center"><img src="public/手机端-大厅界面.jpg" alt="Android 大厅界面" width="180"><br><b>大厅界面</b></td>
-    <td align="center"><img src="public/手机端-大厅二维码.jpg" alt="Android 大厅二维码" width="180"><br><b>大厅二维码</b></td>
-    <td align="center"><img src="public/手机端-设置.jpg" alt="Android 设置" width="180"><br><b>设置</b></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="public/手机端-聊天室.jpg" alt="Android 聊天室" width="180"><br><b>聊天室</b></td>
-    <td align="center"><img src="public/手机端-文件夹共享.jpg" alt="Android 文件夹共享" width="180"><br><b>文件夹共享</b></td>
-    <td align="center"><img src="public/手机端-屏幕共享.jpg" alt="Android 屏幕共享" width="180"><br><b>屏幕共享</b></td>
-    <td align="center"><img src="public/手机端-大厅动态设置.jpg" alt="Android 大厅动态设置" width="180"><br><b>大厅设置</b></td>
-  </tr>
-</table>
-
-## 核心功能
-
-### 组网与连接
-
-- **虚拟局域网组网**：基于 EasyTier 建立虚拟网络，无需公网 IP。
-- **跨端加入大厅**：手机和电脑可加入同一个大厅，二维码邀请更方便。
-- **公开大厅广场**：房主可把大厅公开到广场，陌生人也能在广场看到并一键加入一起玩。
-- **自定义节点与虚拟域名**：支持添加自定义 EasyTier 节点，并为虚拟网络配置自定义域名。
-- **内置 EasyTier 节点**：默认使用海波美国节点 `udp://us01.225284.xyz:11010`，也可切换海波中国大陆或唯爱厦门节点；客户端会记住上次选择。
-- **邀请信息同步节点**：二维码、邀请链接、最近大厅和收藏大厅会同步并恢复对应的 EasyTier 节点与信令服务器配置，避免跨节点导致组网失败。
-- **连接自动自愈**：桌面端和 Android 端均支持信令断线重连、成员状态二次确认与语音连接自动恢复，降低短暂网络波动造成的离线或听不到声音问题。
-- **连接 / 网络诊断**：聚合成员直连、中继、延迟、丢包，给出整体评分与优化建议；网络诊断还能检测虚拟网卡、防火墙、UDP 端口与安全软件拦截，并支持一键放行防火墙。
-- **共享节点投稿**：可把自己的 EasyTier 节点投稿到公共列表供他人使用，也能在「设置 → 共享节点」中按在线状态与延迟浏览他人投稿并一键保存为自定义节点。投稿时服务器会先探测可达性，失效超过 1 天的节点自动移除；该功能在大厅外也可使用。
-- **私有化部署**：支持自建信令服务，便于掌控连接入口。
-
-### 沟通与协作
-
-- **实时语音频道**：大厅内可按频道语音，适合协作沟通。桌面端为**纯原声通话**，不接任何降噪、回声消除或自动增益处理层，试听与实际发出的声音一致。
-- **语音小队**：把成员分到不同小队，只听同队语音，轻松实现分组开黑。
-- **内置变声器**：实时语音变声，内置萝莉音、大叔音等多种音色，开麦聊天更有趣，支持先试听再应用。
-- **大厅聊天室**：支持文字、图片与 Emoji 表情消息。
-- **消息弹幕**：聊天消息以弹幕形式从屏幕顶部飘过，挂后台或玩游戏时也不错过消息；可调字号、速度、透明度、轨道数与颜色（含彩色随机），默认开启。
-- **文件夹共享**：可向同大厅成员共享文件夹，支持下载与传输列表，并可**自定义下载文件的保存目录**（桌面端在设置中选择目录，Android 端通过系统文件选择器授权）。
-- **个人头像**：双端均可设置个人头像，头像会显示在玩家列表与聊天室中，桌面端的迷你悬浮窗同样生效。
-- **屏幕共享**：使用 WebRTC 查看对方屏幕画面。
-- **远程控制**：基于 WebRTC 远程查看并实时操作对方设备，支持电脑↔手机互控；鼠标移动、左键/右键、长按、拖拽、滚轮、键盘输入、返回/主页/最近等手势一应俱全，并按对方分辨率自动选择横竖屏与最佳窗口尺寸。
-- **房间工具**：内置掷骰子、倒计时与多人协同待办清单，方便跑团、抽签与团队任务安排，倒计时切界面或挂后台也不中断。
-
-### 大厅管理与便捷
-
-- **房主管理**：房主可发布滚动公告、设置人数上限、踢出成员、发布或下架到公开广场。
-- **大厅二维码**：扫码加入或复制邀请链接。
-- **常用大厅与最近联机**：收藏常用大厅一键填入，记录最近进入的大厅与一起玩过的玩家，并可收藏常用队友。
-- **全局快捷键**：自定义快捷键，支持按键说话、一键静音等操作。
-- **迷你悬浮窗**：在桌面端快速查看成员状态、控制语音和打开工具。
-- **系统托盘运行**：桌面端支持快捷键或窗口按钮隐藏到系统托盘，恢复快捷键可自定义；隐藏后会显示 Windows 后台运行通知。
-- **软件日志**：桌面端和 Android 端设置中提供日志查看或导出入口，便于排查连接、语音和界面问题。
-- **游戏内 HUD 浮层**：游戏中以置顶穿透浮窗显示队友延迟、丢包与谁在说话，可静音、拖动、调透明度与缩放。
-
-### 游戏联机增强
-
-- **Minecraft 世界自动发现**：扫描大厅成员开放的 Minecraft 世界（MOTD/版本/在线人数/延迟），免输 IP 自动注入本机局域网列表一键加入。
-- **游戏快连**：内置常见联机游戏端口预设，自动生成“虚拟 IP:端口”直连地址一键复制。
-
-### 进阶与其他
-
-- **EasyTier 高级网络配置**：提供全局与单大厅级高级参数（KCP/QUIC 代理、延迟优先、P2P/打洞开关等），以及 SOCKS5、端口转发等出口节点设置。
-- **物理设备绑定**：EasyTier 高级配置支持绑定指定物理网络设备，并在启动网络时使用正确的绑定参数。
-- **本地数据统计**：纯本地统计联机时长、加入/房主次数、活跃时段与常玩伙伴排行，绝不上报网络。
-- **新手引导向导**：首次启动逐步检测运行环境（权限、防火墙、安全软件）并一键修复。
-- **版本更新检测**：启动时检测新版本并提示更新。
+**解法（进行中）**：使用 Debian 自己的 webkit2gtk 源码与补丁集，注入
+`-DENABLE_WEB_RTC=ON -DUSE_LIBRICE=OFF` 自建一份引擎，放入私有目录、
+经 `LD_LIBRARY_PATH` 仅对本应用生效——系统 WebKit 不动，其他应用不受影响。
+完成后本表将逐一更新实测结果。
 
 ## 快速开始
 
 ### 系统要求
 
-| 平台 | 要求 |
+| 项目 | 要求 |
 | --- | --- |
-| Windows | Windows 10/11 64 位，建议 2GB 以上内存 |
-| Linux | Debian 家族发行版（Debian / Ubuntu / Deepin / UOS / Mint），x86_64 |
-| Android | Android 手机或平板，建议 Android 8.0+ |
-| 网络 | 能访问所配置的 EasyTier 节点与 WebRTC 信令服务 |
+| 发行版 | Debian 13 (trixie)（其他发行版未验证，欢迎反馈） |
+| 桌面 | KDE Plasma / GNOME，Wayland 或 X11 |
+| 网络 | 能访问所配置的 EasyTier 节点与信令服务 |
 
-### 下载与安装
+### 第零步：获取第三方二进制
 
-前往 [GitHub Releases](https://github.com/pmh1314520/MCTier/releases) 或 [Gitee Releases](https://gitee.com/peng-minghang/mctier/releases) 下载最新版。
-
-- Windows 安装包：下载 `MCTier_x.y.z_x64-setup.exe` 后双击安装。
-- Windows 便携版：下载 `MCTier.exe` 后直接运行。
-- Android：下载 `MCTier-Android.apk` 后在手机上安装。
-- Linux（Debian 家族）：构建与打包方式见 [MCTier-Linux/README.md](MCTier-Linux/README.md)。应用本体以普通用户运行，只需为 `easytier-core` 授予一次 `cap_net_admin` 能力；语音、屏幕共享与远程控制在标准 Debian 上暂不可用，逐项状态见该目录的状态矩阵。
-
-### 创建或加入大厅
-
-1. 创建方打开 MCTier，选择“创建大厅”。
-2. 输入大厅名称、密码和显示名称。
-3. 创建成功后，把大厅二维码或邀请链接发给其他成员。
-4. 其他成员输入大厅信息或扫码加入。
-5. 等待虚拟 IP 分配完成后，即可访问同大厅内设备开放的局域网服务。
-
-## 示例：Minecraft 联机
-
-MCTier 是通用组网工具，Minecraft 只是其中一个典型使用场景。
-
-房主进入单人世界后，按 `Esc` 打开“对局域网开放”，记下端口号。其他人选择“直接连接”，输入房主的虚拟 IP 和端口，例如：
-
-```text
-10.126.126.1:25565
-```
-
-如果启用了虚拟域名，也可以使用类似 `成员名.mct.net:25565` 的地址连接。
-
-## 私有化部署快速流程
-
-如果你想自建 MCTier 信令服务器，请从 MCTier 官网获取 `MCTier信令服务器.zip` 及配套部署文档。本源码仓库只包含桌面端与 Android 客户端源码，不包含官网和信令服务器部署包。
-
-> 自建信令服务器需要一台公网主机。若还没有合适的机器，可以看看下面的赞助商：
->
-> <a href="https://langlangy.cn/?imctier" target="_blank" rel="noopener">
->   <picture>
->     <source media="(prefers-color-scheme: dark)" srcset="public/langlangyun-logo-white.png">
->     <source media="(prefers-color-scheme: light)" srcset="public/langlangyun-logo-black.png">
->     <img src="public/langlangyun-logo-black.png" alt="浪浪云" height="34">
->   </picture>
-> </a>
->
-> **[浪浪云 BGP 服务器 · 让游戏组网延迟更低更快](https://langlangy.cn/?imctier)**
-
-基本流程：
-
-1. 准备一台 Linux 服务器或局域网内主机。
-2. 安装 Docker 与 Docker Compose。
-3. 上传并解压 `MCTier信令服务器.zip`。
-4. 进入解压目录，给部署脚本执行权限。
-5. 运行部署脚本，按提示填写域名或 IP。
-6. 在 MCTier 客户端设置中填入你的私有信令地址。
-
-常用命令：
+与上游同理，内嵌的 EasyTier 二进制不入库。Linux 侧来自
+[EasyTier 官方 Release v2.5.0](https://github.com/EasyTier/EasyTier/releases/tag/v2.5.0)
+的 `easytier-linux-x86_64-v2.5.0.zip`（与上游 Windows 侧同版本同 commit `88a45d11`）：
 
 ```bash
-unzip MCTier信令服务器.zip
-cd MCTier信令服务器
-chmod +x deploy.sh
-sudo ./deploy.sh
-docker compose -f docker-compose-http.yml ps
-docker compose -f docker-compose-http.yml logs -f
+mkdir -p src-tauri/resources/binaries/linux
+cd src-tauri/resources/binaries/linux
+# 解压后取 easytier-core / easytier-cli 两个文件放入本目录（chmod 755）
 ```
 
-## 开发与构建
+### 第一步：构建
 
-### 第一步：准备第三方二进制（首次 clone 后必做）
-
-`src-tauri/src/modules/resource_manager.rs` 通过 `include_bytes!` 在编译期内嵌 4 个第三方二进制。这些文件体积较大且受各自许可约束，因此不纳入本仓库。clone 之后必须先准备好它们，否则 `cargo build` 会因找不到文件而失败。
-
-```powershell
-# 1) 下载可直接再分发的驱动类文件（wintun.dll / WinDivert64.sys）
-.\scripts\fetch-binaries.ps1
-
-# 2) 重建不依赖 Npcap 的 easytier-core.exe / easytier-cli.exe
-.\scripts\build-easytier-npcap-free.ps1
-```
-
-第一个脚本从 EasyTier 官方 Release 下载 `easytier-windows-x86_64-v2.5.0.zip`，逐个校验 SHA-256（任一不匹配即中止），再放入 `src-tauri/resources/binaries/`。已存在且校验通过的文件会被跳过；如需强制重新获取请加 `-Force`。
-
-第二个脚本单独存在是有原因的：EasyTier 官方构建的 `easytier-core.exe` 在 PE 导入表中**静态导入** Npcap 的 `packet.dll`，而 Npcap 不是开源软件、未经 Nmap Project 书面许可不得随其他软件再分发。该脚本会克隆 EasyTier v2.5.0（同一 commit，不涉及版本升级）、应用 [patches/pnet_datalink-0.35.0-no-npcap.patch](patches/pnet_datalink-0.35.0-no-npcap.patch) 去掉这个导入，并在构建后解析产物导入表作为硬门槛。需要 `cargo`（MSVC 工具链）、`protoc` 与 `libclang`。详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 第 8 节。
-
-### 第二步：构建
 ```bash
 npm install
-npm run tauri dev
-# 发布 Windows NSIS 安装包（推荐使用仓库内固定 Node）
-npm run tauri build -- --bundles nsis --ci
+npm run tauri build -- --no-bundle   # 产物：src-tauri/target/release/mctier
+npm test                             # 前端逻辑单测（34 用例）
+cd src-tauri && cargo test --lib     # Rust 单测（133 用例）
 ```
 
-桌面端的发布构建只生成 NSIS 安装包，避免同时生成 MSI 时重复处理离线 WebView2 安装器。仓库中的一键版本更新工具会自动准备固定 Node，并使用相同的 NSIS 参数。
+Linux 编译期只依赖上面的两个 easytier 文件；Windows 的 `.exe/.dll/.sys`
+已按平台 `#[cfg]` 分离，不参与 Linux 编译。
 
-Android 端源码位于：
+### 第二步：启动
 
-```text
-MCTier-Android/
-```
-
-调试或打包 Android：
+**请使用启动包装脚本**（它带两个 Linux 必需的环境修正，直接跑裸二进制会踩已知问题）：
 
 ```bash
-cd MCTier-Android
-gradlew.bat assembleDebug
+./scripts/run-linux.sh
 ```
 
-## 赞助支持
+脚本做的事：
+1. `GTK_IM_MODULE=""`——绕开 WebKitGTK + fcitx5 下掩码密码框吞按键的问题
+   （本项目已将密码框改为"文本框 + `-webkit-text-security: disc`"圆点伪装，双保险）；
+2. `WEBKIT_DISABLE_DMABUF_RENDERER=1`——规避 AMD + Wayland 上 DMABUF 渲染器的视频挂死；
+3. `RUST_LOG=info`——后端日志可见（完整日志在 `~/.local/share/MCTier/mctier.log`）。
 
-MCTier 会持续维护桌面端和手机端体验。如果它帮你完成了组网、联机或协作，欢迎赞助支持开发工作。每一份赞助都会用于继续优化连接稳定性、双端体验和后续功能。
+### 第三步：TUN 能力授权（仅首次）
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="50%">
-        <img src="public/zfb.jpg" alt="支付宝收款码" width="240"><br>
-        <b>支付宝赞助</b>
-      </td>
-      <td align="center" width="50%">
-        <img src="public/wx.png" alt="微信收款码" width="240"><br>
-        <b>微信赞助</b>
-      </td>
-    </tr>
-  </table>
-</div>
+首次创建/加入大厅时，应用会通过 **pkexec**（polkit 图形授权框）为提取出的
+`easytier-core` 执行一次 `setcap cap_net_admin,cap_net_raw+ep`。
+此后普通用户运行不再弹窗；仅当二进制被重新提取（更新）时需重新授权一次。
 
-## 许可协议
+## 技术实现要点
 
-MCTier **自有代码**使用自定义**源码可得（source-available）非商业**许可（详见 [LICENSE](LICENSE)）：
+对应上游关注的几处平台边界，与本分支的实际落点：
 
-- 仅供个人学习与非商业使用。
-- 允许二次开发，但必须保留原作者信息。
-- 衍生项目需要按相同协议公开源代码。
+- **EasyTier / TUN 权限模型**：应用本体与 easytier 进程**全程普通用户运行**。
+  创建 TUN 所需能力通过**文件能力（setcap）**授予 easytier-core 二进制，启动前由
+  `linux_platform::ensure_easytier_tun_capability` 做 `getcap` 预检，缺失才请求 pkexec。
+  未动用 nftables/iptables。孤儿进程清理用 `pkill -9 -f easytier-core`。
+- **`include_bytes!` 平台切分边界**：以 `#[cfg(windows)] / #[cfg(not(windows))]` 为界——
+  Windows 侧保留原 5 个文件不动；Linux 侧只内嵌
+  `resources/binaries/linux/{easytier-core,easytier-cli}`；三个 DLL 的获取函数整体
+  `#[cfg(windows)]`（Linux 走内核 TUN 无此依赖）；提取函数补 `#[cfg(unix)]` chmod 755；
+  平台文件名收敛为 `EASYTIER_CORE_FILE / EASYTIER_CLI_FILE` 常量。
+- **音频**：PipeWire（经 pipewire-pulse 兼容层）。麦克风 = WebKitGTK getUserMedia
+  → GStreamer pulsesrc；系统回环（AEC 参考）= 默认输出的 `.monitor` 源经
+  `parec --format=float32le` 子进程采集，事件结构（768 帧/块 base64 PCM）与
+  WASAPI 版逐字段对齐。
+- **Wayland**：屏幕共享"查看端"为纯 WebRTC 接收；本机被控的键鼠注入用 **uinput 双设备**
+  （REL 鼠标 + ABS 触摸绝对定位，RustDesk 同方案），未走 xdg-desktop-portal，
+  与合成器无关；logind 对活动会话用户的 `/dev/uinput` ACL 天然放行，无需提权。
+  已修复 tao 在 Wayland 下的一个竞态：`visible(false)` 窗口在 GTK realize 前调用
+  `set_ignore_cursor_events` 会 `unwrap()` panic（弹幕/HUD 窗口进大厅即闪退），
+  修法是先 `show()` 完成 realize 再设穿透。
 
-> 用词说明：由于本许可禁止商业用途，它**不符合** OSI 对“开源许可证”的定义，
-> 因此本项目对自有代码统一表述为“源码可得 / 非商业许可”，而非“开源许可证”。
-> 项目源代码仍然完整公开。项目中包含的第三方组件多为真正的开源许可证，
-> 其权利不受本许可限制（见下文）。
+## 验证记录
 
-### 第三方组件与许可证边界
+- **组网（真机）**：创建大厅 → `tun device ready. dev: MCTier_Net` → 虚拟 IP
+  `10.126.126.1/24` → `ping` 通 → `easytier-cli peer` 显示 p2p 直连公共节点
+  （261ms / 0% 丢包）→ 退出大厅资源干净回收。手机官方 APK 同大厅互连。
+- **独立链路**：无特权基线（EasyTier 静默跳过 TUN，佐证权限模型）→ setcap 后完整链路复测。
+- **测试**：前端 34 用例 + Rust 133 用例全绿；顺带修正上游遗留的
+  `test_extract_ip_edge_cases` 两处与实现矛盾的期望（上游 CI 不跑 cargo test，故未暴露）。
+- **待补**：连麦有声 / 屏幕画面 / 远控实测——正随自建 WebKit 引擎推进，完成后在此更新。
 
-**上述限制仅适用于 MCTier 自有代码，不适用于项目中包含的 EasyTier 组件。**
+## 已知问题与取舍
 
-本软件使用 [EasyTier](https://github.com/EasyTier/EasyTier) 提供虚拟组网能力。
-EasyTier 及 MCTier 对其所作的任何修改，继续按 **LGPL-3.0** 授权：
+1. WebKitGTK 无 WebRTC 的解法是"自建引擎"，WebKit 大版本更新时需要重新构建。
+2. 掩码密码输入框替换为"文本框 + `-webkit-text-security: disc`"组件
+   （`MaskedTextInput`）：WebKitGTK + fcitx5 的 `type=password` 字段吞按键，
+   文本框伪装可完全绕开。上游如遇同类反馈可参考。
+3. 聊天回车发送已补 IME 组合保护（`isComposing` / `keyCode 229`）——
+   中文输入法确认候选词的回车会误发空消息，这在 WebView2 上同样可能触发，
+   建议上游一并吸收。
+4. `detect_security_software` 在 Linux 上返回空列表（杀软扫描是 Windows 语义，
+   保留空实现并日志说明，不打算伪装）。
 
-```
-本软件使用 EasyTier 项目。
-EasyTier Copyright (c) EasyTier contributors.
-EasyTier is licensed under the GNU Lesser General Public License version 3.0 (LGPL-3.0).
-Source: https://github.com/EasyTier/EasyTier
-```
+## 上游与许可
 
-- “禁止商业用途”**不适用于** EasyTier 的 LGPL-3.0 部分；
-- “二次开发必须以相同协议开源”**不适用于** EasyTier 的 LGPL-3.0 部分；
-- MCTier 自定义协议不得被解释为限制 LGPL-3.0 赋予使用者的任何权利。
-
-| 组件 | 平台 | 版本 | Commit | 许可证 | 是否修改 |
-| --- | --- | --- | --- | --- | --- |
-| EasyTier | Windows（独立进程） | v2.5.0 | `88a45d11...` | LGPL-3.0 | 否 |
-| EasyTier | Android（`.so` 动态库） | 基于 v2.6.0 | `79b562cd...` | LGPL-3.0 | 是（见补丁） |
-
-相关文件：
-
-- [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) — 版本、commit、修改状态、源码获取方式、二进制 SHA-256
-- [LICENSE-LGPL-3.0.txt](LICENSE-LGPL-3.0.txt) — LGPL-3.0 全文
-- [LICENSE-GPL-3.0.txt](LICENSE-GPL-3.0.txt) — GPL-3.0 全文（LGPL-3.0 以引用方式并入）
-- [patches/easytier-2.6.0-mctier-android.patch](patches/easytier-2.6.0-mctier-android.patch) — Android 端 EasyTier 修改补丁
-- [patches/pnet_datalink-0.35.0-no-npcap.patch](patches/pnet_datalink-0.35.0-no-npcap.patch) — 移除 Windows 端对 Npcap `Packet.dll` 的静态链接依赖
-- [docs/android/rebuild-with-modified-easytier.md](docs/android/rebuild-with-modified-easytier.md) — 用自行修改的 EasyTier 重新构建 Android 版
-- [licenses/](licenses/) — 各第三方许可证全文（LGPL-3.0、GPL-3.0、GPL-2.0、Apache-2.0、MIT、BSD-3-Clause、Wintun）
-
-`THIRD_PARTY_NOTICES.md` 覆盖 EasyTier、Wintun、WinDivert、
-LocalVQE / GGML / 模型权重、WebRTC 及各应用级依赖的版本、SHA-256、许可证与修改状态。
-其中第 8 节记录了 Npcap `packet.dll` 依赖的成因与移除过程——本项目已不再包含任何 Npcap 文件。
-
-### 商标与非官方声明
-
-本项目不是官方 Minecraft 产品，未获 Mojang Studios 或 Microsoft 批准、认可、关联或背书。
-Minecraft 是 Mojang Synergies AB 及其关联主体的商标。
-
-WireGuard LLC、WireGuard 项目与 Wintun 项目均未对本项目作任何背书。
-
-## 默认服务与元数据披露
-
-MCTier 的通信内容（聊天、语音、文件、屏幕、远程控制）在成员设备之间点对点直接传输。但**建立连接**以及**版本检查**需要访问以下默认服务。若你使用默认配置，这些服务端会看到相应的连接元数据：
-
-| 默认服务 | 地址 | 服务端可见的元数据 | 用途 |
-|---|---|---|---|
-| 信令服务器 | `wss://mctier.pmhs.top/signaling` | 公网 IP、连接时间、大厅名称与密码哈希用于匹配、玩家名、虚拟 IP/虚拟域名、成员数、客户端版本 | 交换 WebRTC 信令、发现同一大厅的成员 |
-| EasyTier 公共节点 | `udp://us01.225284.xyz:11010` | 公网 IP、连接时间、EasyTier 网络标识 | P2P 打洞与必要时的流量中继 |
-| 版本检查 | `https://gitee.com/api/v5/repos/peng-minghang/mctier/tags` | 公网 IP、请求时间（由 Gitee 记录） | 获取最新版本号 |
-
-说明：
-
-- **元数据 ≠ 通信内容**。信令服务器与 EasyTier 节点不解密、不存储你的聊天、语音、文件内容。
-- **保留期限与删除**：官方信令服务器仅在会话期间于内存中保存大厅与成员映射，会话结束即释放；不建立长期用户画像。如需删除相关记录，可通过 issue 或官网联系方式提出。
-- **版本检查**由 Gitee 提供，其日志策略遵循 Gitee 自身的隐私政策。
-- **可以完全不使用官方服务**：在「设置 → 高级」中填入自建信令服务器与自建 EasyTier 节点即可（见「私有化部署快速流程」），此时不会有任何数据经过官方服务。版本检查可在设置中关闭。
-- 功能列表中的「本地数据统计绝不上报网络」**仅指该统计功能本身**（联机时长、加入/房主次数等纯本地计算，不会离开你的设备），并不意味着其他功能不访问上述默认服务。
-## 免责声明
-
-- MCTier 是一款**中立的虚拟局域网组网与协作工具**，仅供在符合所在地法律法规的前提下用于个人合法用途（如局域网游戏联机、协作、访问你本人或已获授权的服务）。
-- 通信内容（聊天、语音、文件、屏幕、远程控制等）均在成员设备之间**点对点直接传输**，开发者不参与、不控制、也无法审查任何用户内容或其具体使用行为。
-- **使用者须对自己的全部使用行为及传输内容独立承担法律责任。** 严禁利用本项目从事任何违反法律法规的活动，包括但不限于：未经许可的经营性/跨境组网、传播违法违规及侵权信息、未经授权控制或监控他人设备、利用语音/变声进行诈骗或冒充他人等。
-- 远程控制、屏幕共享、变声器等敏感功能在应用内均需用户**明确同意相应提示与协议后方可使用**，并提供风险与禁止性条款告知。
-- 本软件按“现状”提供，不作任何明示或默示担保；在法律允许的最大范围内，开发者不对使用本软件造成的任何直接或间接损失负责。
-- 如你不同意上述任何内容，请勿下载、安装或使用本项目。详见应用内《用户协议》《隐私政策》《免责声明》。
-
-## 作者
-
-青云制作_彭明航
-
-- GitHub: <https://github.com/pmh1314520/MCTier>
-- Gitee: <https://gitee.com/peng-minghang/mctier>
-
----
-
-<div align="center">
-  <b>MCTier 对个人非商业使用完全免费，源代码完整公开，祝使用顺利。</b>
-</div>
+- 上游：[pmh1314520/MCTier](https://github.com/pmh1314520/MCTier)
+  （Windows / Android 构建下载、完整文档、赞助渠道均在上游）。
+- 本分支继承上游全部许可条款（自定义源码可得非商业许可 + EasyTier LGPL-3.0 等，
+  详见上游 [LICENSE](LICENSE) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)）；
+  Linux 适配新增代码同样遵循该许可。
+- Linux 侧 EasyTier 二进制来自 EasyTier 官方 Release（LGPL-3.0），不入库，构建时获取。
