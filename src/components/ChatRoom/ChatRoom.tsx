@@ -348,7 +348,10 @@ export const ChatRoom: React.FC = () => {
     // 清空输入框
     setInputValue('');
     setReplyTo(null);
-    
+
+    // 乐观消息 ID：try 外声明，供 catch 回滚使用（乐观消息在 try 内创建）
+    let optimisticMessageId = '';
+
     try {
       // 乐观更新：立即在本地显示自己发送的消息
       const optimisticMessage: ChatMessage = {
@@ -359,6 +362,7 @@ export const ChatRoom: React.FC = () => {
         timestamp: Date.now(),
         type: 'text',
       };
+      optimisticMessageId = optimisticMessage.id;
       
       // 立即添加到本地消息列表
       addChatMessage(optimisticMessage);
@@ -377,7 +381,7 @@ export const ChatRoom: React.FC = () => {
     } catch (error) {
       console.error('发送聊天消息失败:', error);
       // 回滚乐观消息：发送失败时移除列表中那条"假成功"消息，避免用户误以为已送达
-      deleteChatMessage(optimisticMessage.id);
+      if (optimisticMessageId) deleteChatMessage(optimisticMessageId);
       antdMessage.error(tl('发送消息失败，已移除待发消息', 'Failed to send message, pending message removed'));
       // 发送失败时恢复输入框内容
       setInputValue(text);
